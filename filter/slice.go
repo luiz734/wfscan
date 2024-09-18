@@ -6,5 +6,7 @@ import (
 )
 
 func Slice(files *[]types.FileInfo, cli *parser.CLI) {
-    *files = (*files)[cli.Skip:cli.Entries+cli.Skip]
+    startIndex := max(0, cli.Skip)
+    endIndex := min(cli.Entries+cli.Skip, len(*files))
+    *files = (*files)[startIndex:endIndex]
 }
