@@ -16,6 +16,8 @@ type CLI struct {
 	Greater string `short:"g" name:"greater" default:"" help:"Show results greater than"`
 
 	PrintError bool `short:"e" name:"errors" default:"false" help:"Show error messages"`
+	// Format     Format `short:"o" name:"format default:"sf" help:"Output format"`
+	Format string `short:"o" name:"format" default:"sf" help:"Output format:\n\ts: file size\n\tf: file full path\n\td: file dir\n\tn: file name\n"`
 }
 
 func foo() {

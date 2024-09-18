@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 	"wfscan/filter"
 	"wfscan/parser"
+	"wfscan/printer"
 	"wfscan/types"
 
 	"github.com/alecthomas/kong"
@@ -36,10 +37,14 @@ func main() {
 	filter.Slice(&files, &cli)
 
 	for _, f := range files {
-		fmt.Println(f)
+		out, err := printer.Format(f, &cli)
+		if err != nil {
+			errMsg := fmt.Errorf("error formating output: %w", err)
+			fmt.Fprintln(os.Stderr, errMsg)
+			os.Exit(1)
+		}
+		fmt.Println(out)
 	}
-
-	// fmt.Println(humanize.Bytes(uint64(cli.Greater * 1024)))
 }
 
 func contains(s []string, e string) bool {
