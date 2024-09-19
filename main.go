@@ -17,9 +17,8 @@ import (
 
 func main() {
 	var cli parser.CLI
-	ctx := kong.Parse(&cli)
-
-	fmt.Println(ctx.Args)
+	_ = kong.Parse(&cli)
+	// fmt.Println(ctx.Args)
 	var files []types.FileInfo
 
 	filePath := cli.Path

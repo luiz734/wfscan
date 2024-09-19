@@ -12,8 +12,8 @@ type CLI struct {
 
 	Sort string `short:"s" name:"sortby" default:"size" enum:"size,name"  help:"Define a sorting method"`
 
-	Lesser  string `short:"l" name:"lesser" default:"" help:"Show results lesser than"`
-	Greater string `short:"g" name:"greater" default:"" help:"Show results greater than"`
+	Smaller  string `short:"l" name:"smaller" default:"" help:"Show results smaller than"`
+	Larger string `short:"g" name:"larger" default:"" help:"Show results larger than"`
 
 	PrintError bool `short:"e" name:"errors" default:"false" help:"Show error messages"`
 	// Format     Format `short:"o" name:"format default:"sf" help:"Output format"`

@@ -26,10 +26,10 @@ func filter(ss []string, test func(string) bool) (ret []string) {
 // }
 
 func KeepBig(files *[]types.FileInfo, cli *parser.CLI) error {
-	if cli.Greater == "" {
+	if cli.Larger == "" {
 		return nil
 	}
-	minBytesAllowed, err := humanize.ParseBytes(cli.Greater)
+	minBytesAllowed, err := humanize.ParseBytes(cli.Larger)
 	if err != nil {
 		return fmt.Errorf("invalid size: %w : ", err)
 	}
@@ -48,10 +48,10 @@ func KeepBig(files *[]types.FileInfo, cli *parser.CLI) error {
 }
 
 func KeepSmall(files *[]types.FileInfo, cli *parser.CLI) error {
-	if cli.Lesser == "" {
+	if cli.Smaller == "" {
 		return nil
 	}
-	maxBytesAllowed, err := humanize.ParseBytes(cli.Lesser)
+	maxBytesAllowed, err := humanize.ParseBytes(cli.Smaller)
 	if err != nil {
 		return fmt.Errorf("invalid size: %w : ", err)
 	}
