@@ -8,6 +8,8 @@ This tool is not optimized for performance. If speed is important to you, Linux 
 
 Clone the repo and compile it. All dependencies are managed by Go.
 
+Alternatively, you can download the precompiled release.
+
 ## Examples (Windows)
 
 - List files larger than 1GB:
